@@ -1,0 +1,14 @@
+
+<header class="header">
+  <h1 class="logo"><a href="#">Bookstore</a></h1>
+<ul class="main-nav">
+    <li><a routerLinkActive="active" routerLink="book" >Books</a></li>
+    <li><a  routerLinkActive="active" routerLink="">Home</a></li>
+    <li><a  routerLinkActive="active" routerLink="signup" (click)="redirect()" *ngIf="!authService.isLoggedIn">Singup</a></li>
+    <li *ngIf="!authService.isLoggedIn"><a routerLinkActive="active" routerLink="login">Login</a></li>
+    <li *ngIf="authService.isAdmin"><a routerLinkActive="active" routerLink="subadmin" >register user</a></li>
+    <li *ngIf="authService.isLoggedIn" routerLinkActive="active" ><a (click)="logout()">Logout</a></li>
+    <li id="addbook" *ngIf="authService.isAdmin" routerLinkActive="active" ><a (click)="addBook()">addBook</a></li>
+</ul>
+</header> 
+<router-outlet></router-outlet>

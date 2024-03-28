@@ -1,0 +1,20 @@
+
+
+<div class="login-container">
+    <form class="login-form" [formGroup]="userForm">
+      <h1>Welcome Back</h1>
+      <p>Please login to your account</p>
+      <div class="input-group">
+        <input type="text" id="username" name="username" placeholder="Username" formControlName="username" required>
+      </div>
+      <div class="input-group">
+        <input type="password" id="password" name="password" placeholder="Password" formControlName="password"  required>
+      </div>
+      <button type="button"(click)="login()">Login</button>
+      <div class="bottom-text">
+        <p>Don't have an account? <a (click)="redirect()">
+          Sign Up</a></p>
+        <p> 
+      </div>
+    </form>
+  </div>
